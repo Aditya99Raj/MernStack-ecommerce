@@ -19,11 +19,11 @@ app.use(
   })
 );
 
-app.get("/users", userRoutes);
-app.post("/users",userRoutes);
-
-app.get("/cart",cartRoutes);
-app.post("/cart",cartRoutes);
+app.get("/",async(req,res)=>{
+  return res.send("hello");
+})
+app.use("/users", userRoutes);
+app.use("/cart",cartRoutes);
 
 app.listen(port, async () => {
   await connect();

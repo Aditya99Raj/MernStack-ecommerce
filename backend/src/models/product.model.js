@@ -11,6 +11,8 @@ const productSchema = new mongoose.Schema({
   size: {type:String,enum:['S','M','L','XL'],default:'M'},
   discountedPrice: {type:String,required:false},
   inventory: {type:Number,required:false},
+},{
+  timestamps:true,
 });
 
 module.exports = mongoose.model("product",productSchema);
